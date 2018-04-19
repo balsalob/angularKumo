@@ -4,7 +4,7 @@ import { Ilustration } from './ilustration';
 @Injectable()
 export class IlustracionesService {
 
-  private imagenes: Array<Ilustration> = [
+  private imagenes: Array<any> = [
     {
       id: 1,
       imagenes: ['assets/img/belen-prieto-1.jpg',

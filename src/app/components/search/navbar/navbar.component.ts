@@ -12,4 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  ocultar() {
+
+    document.getElementById('mobile-demo').style.transform = ' translateX(-100%)';
+
+  }
+
 }

@@ -1,53 +1,26 @@
-<div class="parallax-container hide-on-med-and-down valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h1 class="header col s12 light">PRÓXIMOS EVENTOS</h1>
-            </div>
-        </div>
-    </div>
-    <div class="parallax" materialize="parallax">
-        <img src="assets/img/hpspecial2.jpg">
-    </div>
-</div>
-<div class="hide-on-large-only">
-    <h4 class="center-align">PRÓXIMOS EVENTOS</h4>
-</div>
+<app-parallax titulo="PRÓXIMOS EVENTOS" imagen="hpspecial2"></app-parallax>
 
 <div class="container pink lighten-5">
     <div class="padding hide-on-med-and-down"></div>
-    <div class="row">
-        <div class="col s12 m6">
-            <span>
-              <h4><a href="http://www.heroesmanga.com/" target="_blank">HEROES MANGA MADRID 2018</a></h4>
-          </span>
-            <span>
-              <h5>7 Y 8 DE ABRIL – IFEMA</h5>
-          </span>
-        </div>
-        <div class="col s12 m6">
-            <div class="video-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4292.793021501014!2d-3.6195882741268894!3d40.46501974184311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422e50d152df37%3A0x801ce4be7e7a5eec!2sIFEMA+-+Feria+de+Madrid!5e0!3m2!1ses!2ses!4v1520791627823"
-                    frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div *ngFor="let evento of eventos; let i = index">
+        <div class="row">
+            <div class="col s12 m6">
+                <span>
+                    <h4><a href="{{evento.url}}" target="_blank">{{evento.nombre}}</a></h4>
+                </span>
+                <span>
+                    <h5>{{evento.fecha}}</h5>
+                </span>
+            </div>
+            <div class="col s12 m6">
+                <div class="video-container">
+                    <iframe [src]="evento.videoUrl | domseguro" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="divider"></div>
-    <div class="padding hide-on-med-and-down"></div>
-    <div class="row">
-        <div class="col s12 m6">
-            <span>
-              <h4><a href="http://www.japanweekend.com/valencia/" target="_blank">SALÓN DEL MANGA DE VALENCIA</a></h4>
-          </span>
-            <span>
-              <h5>19 Y 20 DE MAYO – FERIA VALENCIA</h5>
-          </span>
-        </div>
-        <div class="col s12 m6">
-            <div class="video-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3078.5166279118444!2d-0.43053368475917914!3d39.5028281186344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60456cf398be71%3A0xa41b3b9e8bdd5bc1!2sFeria+Valencia!5e0!3m2!1ses!2ses!4v1520792285631"
-                    frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+        <div *ngIf="i != ocultar">
+            <div class="divider"></div>
+            <div class="padding hide-on-med-and-down"></div>
         </div>
     </div>
 </div>

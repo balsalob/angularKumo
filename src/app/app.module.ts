@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+
 // servicios
 
 import { IlustracionesService } from './services/ilustraciones.service';
+import { EventosService } from './services/eventos.service';
 
 // componentes
 import { MaterializeModule } from 'angular2-materialize';
@@ -18,6 +20,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { EventComponent } from './components/event/event.component';
 import { YoutubeComponent } from './components/youtube/youtube.component';
+import { ParallaxComponent } from './components/search/parallax/parallax.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+
 
 
 @NgModule({
@@ -29,7 +35,11 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
     PortfolioComponent,
     AboutComponent,
     EventComponent,
-    YoutubeComponent
+    YoutubeComponent,
+    ParallaxComponent,
+    PageNotFoundComponent,
+    DomseguroPipe
+
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,8 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
     MaterializeModule
   ],
   providers: [
-    IlustracionesService
+    IlustracionesService,
+    EventosService
   ],
   bootstrap: [AppComponent]
 })

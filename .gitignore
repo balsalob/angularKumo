@@ -46,3 +46,4 @@ Thumbs.db
 #personal
 /src/assets/img/*
 /src/assets/video/*
+/dist/*
